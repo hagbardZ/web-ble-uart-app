@@ -12,12 +12,6 @@ The application runs in the browser as a Single Page Application (SPA) without r
 
 ![Screenshot](./docs/screenshot.png)
 
-> [!TIP]
-Check out the live demo online: [https://siliconlabssoftware.github.io/web-bluetooth-spp-application/](https://siliconlabssoftware.github.io/web-bluetooth-spp-application/)
-
-## Compatible Bluetooth SPP Application Examples
-- [Bluetooth - Serial Port Profile (SPP)](https://github.com/SiliconLabs/bluetooth_applications/tree/master/bluetooth_serial_port_profile)
-- [Bluetooth - Secure Serial Port Profile (SPP)](https://github.com/SiliconLabs/bluetooth_applications/tree/master/bluetooth_secure_spp_over_ble)
 
 ## Requirements
 - Install [Nodejs >= v22.14.0 LTS](https://nodejs.org/en/download) 
