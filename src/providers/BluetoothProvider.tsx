@@ -52,7 +52,15 @@ const BluetoothProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     try {
       const device = await navigator.bluetooth.requestDevice({
         acceptAllDevices: false,
-        filters: [{ services: services as BluetoothServiceUUID[] }],
+        //filters: [{ services: services as BluetoothServiceUUID[] }],
+
+  filters: [
+      {
+        namePrefix: "MOSER", // matches devices starting with this
+      //  services: services as BluetoothServiceUUID[],
+      },
+    ],
+
       });
 
       const server = await device.gatt?.connect();
