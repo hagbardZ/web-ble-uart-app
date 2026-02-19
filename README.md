@@ -1,16 +1,9 @@
-# Web Bluetooth - Serial Port Profile (SPP) Example
-[![Version Badge](https://img.shields.io/badge/v1.0.0-green)](https://github.com/SiliconLabsSoftware/web-bluetooth-spp-application/releases)
+# Web Bluetooth UART TERMINAL
 
-## Overview
-
-This example application implements the client-side device for the [Bluetooth - Serial Port Profile (SPP)](https://github.com/SiliconLabs/bluetooth_applications/tree/master/bluetooth_serial_port_profile) and [Bluetooth - Secure Serial Port Profile (SPP)](https://github.com/SiliconLabs/bluetooth_applications/tree/master/bluetooth_secure_spp_over_ble) application examples and provides an example to communicate Silicon Labs wireless microcontrollers using the BLE protocol from the Web Bluetooth API [compatible browsers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API#browser_compatibility).
-
-
-![Overview](./docs/overview.png)
 
 The application runs in the browser as a Single Page Application (SPA) without requiring any server-side connection. 
 
-![Screenshot](./docs/screenshot.png)
+
 
 
 ## Requirements
