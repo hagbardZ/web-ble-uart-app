@@ -46,16 +46,30 @@ const Terminal: FC<TerminalProps> = () => {
   const clear = () => setContent([]);
   const append = (content: string | JSX.Element) => setContent((prev) => [...prev, content]);
 
+  
+  function dataViewToHex(value: DataView): string {
+  const bytes = new Uint8Array(value.buffer, value.byteOffset, value.byteLength);
+
+  return Array.from(bytes)
+    .map(byte => byte.toString(16).padStart(2, "0")) // 2-digit hex
+    .join("")
+    .toUpperCase();
+}
+  
+  
   const service = useBluetoothService({ uuid: serviceUUID });
 
-  const characteristic = service.useBluetoothCharacteristic({
-    uuid: characteristicUUID,
-    onValueChanged: (value: DataView | undefined) => {
-      if (value) {
-        const receivedContent = dataviewToString(value);
-        append(receivedContent);
-      }
-    },
+const characteristic = service.useBluetoothCharacteristic({
+  uuid: characteristicUUID,
+  onValueChanged: (value: DataView | undefined) => {
+    if (!value) return;
+
+    let hexString = dataViewToHex(value);
+     
+      hexString=hexString.replaceAll("313233343536370D","--EOL--\r\n\r\n");
+     
+    append(hexString);
+  }
   });
 
   const send = async () => {
@@ -79,6 +93,7 @@ const Terminal: FC<TerminalProps> = () => {
       'CR-LF': '\r\n',
       CR: '\r',
       LF: '\n',
+      NULLX: '\0'
     };
 
     let data = command;
@@ -182,7 +197,7 @@ const Terminal: FC<TerminalProps> = () => {
               <Select
                 label="Line terminator"
                 value={lineTerminator}
-                data={['None', 'CR-LF', 'CR', 'LF']}
+                data={['None', 'CR-LF', 'CR', 'LF','NULLX']}
                 allowDeselect={false}
                 onChange={setLineTerminator}
               />
