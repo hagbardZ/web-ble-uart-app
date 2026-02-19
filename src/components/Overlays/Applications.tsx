@@ -33,31 +33,16 @@ const Applications: FC<{}> = () => {
       >
         <Card.Section component="div" m={5}>
           <Title order={3} style={{ textAlign: 'center' }} mb={5}>
-            Compatible Application Examples
+            Compatible Products
           </Title>
           <Text style={{ marginBottom: 35, textAlign: 'center' }}>
-            This browser-based SPP client example application is compatible with the application
-            examples below.
+            This browser-based BLE Terminal application is compatible with these products:
           </Text>
           <Grid columns={13} justify="center" align="flex-start">
             <Grid.Col span={{ xs: 12, md: 'auto' }}>
               <Stack align="center" justify="center" gap="md">
-                <Anchor
-                  target="_blank"
-                  underline="hover"
-                  c="black"
-                  href="https://github.com/SiliconLabs/bluetooth_applications/tree/master/bluetooth_serial_port_profile"
-                >
-                  <Paper shadow="xs" p="sm" bg="#FCFCFC">
-                    <Stack align="center" justify="center" gap="sm">
-                      <Image src={GithubLogo} mah={30} maw={30} w="auto" alt="Github" />
-                      <Title order={5} style={{ textAlign: 'center' }}>
-                        Bluetooth - Serial Port Profile (SPP)
-                      </Title>
-                    </Stack>
-                  </Paper>
-                </Anchor>
-                <Divider my="xs" label="Board compatibility" labelPosition="center" w="100%" />
+            
+                <Divider my="xs" label="Clipper compatibility" labelPosition="center" w="100%" />
                 <Group justify="center" gap="md">
                   <Stack align="center" justify="flex-end" gap="md">
                     <Anchor
@@ -81,7 +66,7 @@ const Applications: FC<{}> = () => {
                     >
                       <Stack align="center" justify="flex-end" gap="xs">
                         <Image src={xg24dk} mih={75} mah={75} w="auto" alt="xG24DK" />
-                        <Text size="xs">EFR32xG24 Dev Kit</Text>
+                        <Text size="xs">Bravura2.0</Text>
                       </Stack>
                     </Anchor>
                   </Stack>
@@ -138,21 +123,7 @@ const Applications: FC<{}> = () => {
             </Grid.Col>
             <Grid.Col span={{ xs: 12, md: 'auto' }}>
               <Stack align="center" justify="center" gap="md">
-                <Anchor
-                  target="_blank"
-                  underline="hover"
-                  c="black"
-                  href="https://github.com/SiliconLabs/bluetooth_applications/tree/master/bluetooth_secure_spp_over_ble"
-                >
-                  <Paper shadow="xs" p="sm" bg="#FCFCFC">
-                    <Stack align="center" justify="center" gap="sm">
-                      <Image src={GithubLogo} mah={30} maw={30} w="auto" alt="Github" />
-                      <Title order={5} style={{ textAlign: 'center' }}>
-                        Bluetooth - Secure Serial Port Profile (SPP)
-                      </Title>
-                    </Stack>
-                  </Paper>
-                </Anchor>
+                
                 <Divider my="xs" label="Board compatibility" labelPosition="center" w="100%" />
                 <Group justify="center" gap="md">
                   <Stack align="center" justify="flex-end" gap="md">
@@ -164,7 +135,7 @@ const Applications: FC<{}> = () => {
                     >
                       <Stack align="center" justify="flex-end" gap="xs">
                         <Image src={xg24dk} mih={70} mah={70} w="auto" alt="xG24EK" />
-                        <Text size="xs">EFR32xG24 Dev Kit</Text>
+                        <Text size="xs">Bravura2.0</Text>
                       </Stack>
                     </Anchor>
                   </Stack>
