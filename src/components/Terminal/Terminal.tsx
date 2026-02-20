@@ -45,8 +45,8 @@ const Terminal: FC<TerminalProps> = () => {
 
   const clear = () => setContent([]);
   const append = (content: string | JSX.Element) => setContent((prev) => [...prev, content]);
-
   
+
   function dataViewToHex(value: DataView): string {
   const bytes = new Uint8Array(value.buffer, value.byteOffset, value.byteLength);
 
@@ -58,6 +58,8 @@ const Terminal: FC<TerminalProps> = () => {
   
   
   const service = useBluetoothService({ uuid: serviceUUID });
+var IndexY=0;
+var Data_ModellNR="  ";
 
 const characteristic = service.useBluetoothCharacteristic({
   uuid: characteristicUUID,
@@ -66,7 +68,16 @@ const characteristic = service.useBluetoothCharacteristic({
 
     let hexString = dataViewToHex(value);    
     hexString=hexString.replaceAll("313233343536370D","--EOL--\r\n\r\n");     
+    
+     Data_ModellNR=hexString.substring(0,2);
+ 
+    
     append(hexString);
+    
+    //setContent([hexString]);
+  
+    
+    
   // const receivedContent = dataviewToString(value);
   // append(receivedContent);
   }
