@@ -41,7 +41,7 @@ const Terminal: FC<TerminalProps> = () => {
   const [command, setCommand] = useState<string>('');
   const [echoing, setEchoing] = useState<boolean>(true);
   const [content, setContent] = useState<(string | JSX.Element)[]>([]);
-  const [lineTerminator, setLineTerminator] = useState<string | null>('CR-LF');
+  const [lineTerminator, setLineTerminator] = useState<string | null>('NULLX');
 
   const clear = () => setContent([]);
   const append = (content: string | JSX.Element) => setContent((prev) => [...prev, content]);
@@ -72,6 +72,37 @@ const characteristic = service.useBluetoothCharacteristic({
   }
   });
 
+
+
+const sendMO1 = async () => {
+    const chunks = prepareData();
+          try {     
+        await characteristic.characteristic?.writeValueWithoutResponse(
+          stringToUint8Array(">>>MO1\0")
+        );
+      
+      setCommand('');
+    } catch (error) {
+      notifications.show({ message: 'Failed to send data to the connected device.', color: 'red' });
+    }
+  };
+
+const sendMO0 = async () => {
+    const chunks = prepareData();
+          try {     
+        await characteristic.characteristic?.writeValueWithoutResponse(
+          stringToUint8Array(">>>MO0\0")
+        );
+      
+      setCommand('');
+    } catch (error) {
+      notifications.show({ message: 'Failed to send data to the connected device.', color: 'red' });
+    }
+  };
+
+
+
+
   const send = async () => {
     const chunks = prepareData();
 
@@ -80,7 +111,7 @@ const characteristic = service.useBluetoothCharacteristic({
         await characteristic.characteristic?.writeValueWithoutResponse(
           stringToUint8Array(chunks[i])
         );
-      }
+      }     
       setCommand('');
     } catch (error) {
       notifications.show({ message: 'Failed to send data to the connected device.', color: 'red' });
@@ -90,10 +121,10 @@ const characteristic = service.useBluetoothCharacteristic({
   const prepareData = (): string[] => {
     const ltMap: Record<string, string> = {
       None: '',
-      'CR-LF': '\r\n',
+       NULLX: '\0',      
       CR: '\r',
       LF: '\n',
-      NULLX: '\0'
+      'CR-LF': '\r\n'
     };
 
     let data = command;
@@ -181,7 +212,7 @@ const characteristic = service.useBluetoothCharacteristic({
           <Grid justify="space-between" align="flex-end">
             <Grid.Col span={{ xs: 12, md: 'auto' }}>
               <Input
-                placeholder="Type a text"
+                placeholder="Enter Command, starting with >>> (e.g. >>>MO1 to turn the Motor on)"
                 value={command}
                 onKeyDown={(e) => {
                   if (e.code === 'Enter') {
@@ -197,7 +228,7 @@ const characteristic = service.useBluetoothCharacteristic({
               <Select
                 label="Line terminator"
                 value={lineTerminator}
-                data={['None', 'CR-LF', 'CR', 'LF','NULLX']}
+                data={['None', 'NULLX', 'CR', 'LF','CR-LF']}
                 allowDeselect={false}
                 onChange={setLineTerminator}
               />
@@ -205,6 +236,14 @@ const characteristic = service.useBluetoothCharacteristic({
             <Grid.Col span={{ xs: 12, md: 'content' }}>
               <Button variant="outline" onClick={send}>
                 Send
+              </Button>
+            </Grid.Col>
+             <Grid.Col span={{ xs: 12, md: 'content' }}>
+              <Button variant="outline" onClick={sendMO0}>
+                Motor OFF
+              </Button>
+               <Button variant="outline" onClick={sendMO1}>
+                Motor ON
               </Button>
             </Grid.Col>
           </Grid>
