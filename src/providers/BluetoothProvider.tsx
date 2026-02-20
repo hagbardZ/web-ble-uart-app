@@ -44,7 +44,7 @@ const BluetoothProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
       });
     }
   }, [isFailed]);
-
+/*
   const connect = async (services: string[]) => {
     setIsFailed(false);
     setIsConnecting(true);
@@ -52,16 +52,37 @@ const BluetoothProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     try {
       const device = await navigator.bluetooth.requestDevice({
         acceptAllDevices: false,
-        //filters: [{ services: services as BluetoothServiceUUID[] }],
-
-  filters: [
-      {
-        namePrefix: "MOSER", // matches devices starting with this
-      //  services: services as BluetoothServiceUUID[],
-      },
-    ],
-
+        filters: [{ services: services as BluetoothServiceUUID[] }],
       });
+
+*/
+/*
+const connect = async () => {
+  setIsFailed(false);
+  setIsConnecting(true);
+
+  try {
+    const device = await navigator.bluetooth.requestDevice({
+      acceptAllDevices: false,
+      filters: [{ namePrefix: "MOSER" }],          // filer all Device Names starting with "MOSER"
+      optionalServices: [__APP_SPP_BLE_SERVICE__], // required for later access
+    });
+*/
+const connect = async (services: string[]) => {
+  setIsFailed(false);
+  setIsConnecting(true);
+
+  try {
+    const device = await navigator.bluetooth.requestDevice({
+      acceptAllDevices: false,
+      filters: [
+        { namePrefix: "MOSER" }, // filer all Device Names starting with "MOSER"
+      ],
+      optionalServices: services as BluetoothServiceUUID[], // required for later access permission
+    });
+
+
+
 
       const server = await device.gatt?.connect();
       if (server) {

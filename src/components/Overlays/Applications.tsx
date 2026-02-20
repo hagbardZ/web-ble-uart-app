@@ -49,11 +49,11 @@ const Applications: FC<{}> = () => {
                       target="_blank"
                       underline="hover"
                       c="black"
-                      href="https://www.silabs.com/development-tools/wireless/efr32xg24-explorer-kit?tab=overview"
+                      href="https://hagbardz.github.io/web-ble-uart-app/"
                     >
                       <Stack align="center" justify="flex-end" gap="xs">
                         <Image src={xg24ek} mih={75} mah={75} w="auto" alt="xG24EK" />
-                        <Text size="xs">EFR32xG24 Explorer Kit</Text>
+                        <Text size="xs">1588</Text>
                       </Stack>
                     </Anchor>
                   </Stack>
@@ -62,7 +62,7 @@ const Applications: FC<{}> = () => {
                       target="_blank"
                       underline="hover"
                       c="black"
-                      href="https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview"
+                      href="https://hagbardz.github.io/web-ble-uart-app/"
                     >
                       <Stack align="center" justify="flex-end" gap="xs">
                         <Image src={xg24dk} mih={75} mah={75} w="auto" alt="xG24DK" />
@@ -75,11 +75,11 @@ const Applications: FC<{}> = () => {
                       target="_blank"
                       underline="hover"
                       c="black"
-                      href="https://www.silabs.com/development-tools/wireless/bluetooth/bgm220-explorer-kit?tab=overview"
+                      href="https://hagbardz.github.io/web-ble-uart-app/"
                     >
                       <Stack align="center" justify="flex-end" gap="xs">
-                        <Image src={bgm220p} mih={75} mah={75} w="auto" alt="BGM220P" />
-                        <Text size="xs">BGM220P Explorer Kit</Text>
+                        <Image src={bgm220p} mih={75} mah={75} w="auto" alt="1871" />
+                        <Text size="xs">Chromstyle</Text>
                       </Stack>
                     </Anchor>
                   </Stack>
@@ -88,11 +88,11 @@ const Applications: FC<{}> = () => {
                       target="_blank"
                       underline="hover"
                       c="black"
-                      href="https://www.silabs.com/development-tools/wireless/bluetooth/bg22-explorer-kit?tab=overview"
+                      href="https://hagbardz.github.io/web-ble-uart-app/"
                     >
                       <Stack align="center" justify="flex-end" gap="xs">
-                        <Image src={bg22ek} mih={75} mah={75} w="auto" alt="BG22EK" />
-                        <Text size="xs">BG22 Explorer Kit</Text>
+                        <Image src={bg22ek} mih={75} mah={75} w="auto" alt="KM" />
+                        <Text size="xs">KM Series</Text>
                       </Stack>
                     </Anchor>
                   </Stack>
@@ -101,7 +101,7 @@ const Applications: FC<{}> = () => {
                       target="_blank"
                       underline="hover"
                       c="black"
-                      href="https://www.sparkfun.com/products/20270"
+                      href="https://hagbardz.github.io/web-ble-uart-app/"
                     >
                       <Stack align="center" justify="flex-end" gap="xs">
                         <Image
@@ -109,9 +109,9 @@ const Applications: FC<{}> = () => {
                           mih={75}
                           mah={75}
                           w="auto"
-                          alt="Sparkfun Thing Plus MGM240P"
+                          alt="1877"
                         />
-                        <Text size="xs">Sparkfun Thing Plus MGM240P</Text>
+                        <Text size="xs">Chrom2Style</Text>
                       </Stack>
                     </Anchor>
                   </Stack>
@@ -122,25 +122,7 @@ const Applications: FC<{}> = () => {
               <Divider orientation="vertical" h="100%" variant="dashed" />
             </Grid.Col>
             <Grid.Col span={{ xs: 12, md: 'auto' }}>
-              <Stack align="center" justify="center" gap="md">
-                
-                <Divider my="xs" label="Board compatibility" labelPosition="center" w="100%" />
-                <Group justify="center" gap="md">
-                  <Stack align="center" justify="flex-end" gap="md">
-                    <Anchor
-                      target="_blank"
-                      underline="hover"
-                      c="black"
-                      href="https://www.silabs.com/development-tools/wireless/efr32xg24-dev-kit?tab=overview"
-                    >
-                      <Stack align="center" justify="flex-end" gap="xs">
-                        <Image src={xg24dk} mih={70} mah={70} w="auto" alt="xG24EK" />
-                        <Text size="xs">Bravura2.0</Text>
-                      </Stack>
-                    </Anchor>
-                  </Stack>
-                </Group>
-              </Stack>
+            
             </Grid.Col>
           </Grid>
         </Card.Section>

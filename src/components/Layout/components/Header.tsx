@@ -11,7 +11,7 @@ const Header: FC<{}> = () => {
         <Image src={SilabsLogoLabel} alt="Web Bluetooth - SPP" h={35} w="auto" visibleFrom="md" />
         <Image src={SilabsLogoLabel} alt="Web Bluetooth - SPP" h={25} w="auto" hiddenFrom="md" />
         <Title className={classes.title}>
-          WEB Bluetooth -{' '}
+          WEB Bluetooth Terninal -{' '}
           <Text
             className={classes.spp}
             inherit

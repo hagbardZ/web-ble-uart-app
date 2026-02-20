@@ -64,11 +64,11 @@ const characteristic = service.useBluetoothCharacteristic({
   onValueChanged: (value: DataView | undefined) => {
     if (!value) return;
 
-    let hexString = dataViewToHex(value);
-     
-      hexString=hexString.replaceAll("313233343536370D","--EOL--\r\n\r\n");
-     
+    let hexString = dataViewToHex(value);    
+    hexString=hexString.replaceAll("313233343536370D","--EOL--\r\n\r\n");     
     append(hexString);
+  // const receivedContent = dataviewToString(value);
+  // append(receivedContent);
   }
   });
 

@@ -8,8 +8,8 @@ const Footer: FC<{}> = () => {
 
   return (
     <Group justify="space-between" h="100%" px={15}>
-      <Text visibleFrom="md">© {new Date().getFullYear()} Silicon Labs. All rights reserved.</Text>
-      <Text hiddenFrom="md">© {new Date().getFullYear()} Silicon Labs</Text>
+      <Text visibleFrom="md">© {new Date().getFullYear()} All rights reserved.</Text>
+      <Text hiddenFrom="md">© {new Date().getFullYear()}  ...</Text>
       <Group justify="flex-end" gap="sm">
         <Anchor
           target="_blank"
